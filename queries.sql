@@ -50,12 +50,12 @@ SELECT neutered, AVG(escape_attempts) FROM animals WHERE EXTRACT(year FROM date_
 SELECT animals.name, owners.full_name FROM animals
     INNER JOIN owners
     ON owners.id = animals.owner_id
-    AND owners.full_name = 'Melody Pond';
+    WHERE owners.full_name = 'Melody Pond';
 
 SELECT animals.name, species.name FROM animals
     INNER JOIN species
     ON species.id = animals.species_id
-    AND species.name = 'Pokemon';
+    WHERE species.name = 'Pokemon';
 
 SELECT owners.full_name, animals.name FROM owners
     LEFT JOIN animals
