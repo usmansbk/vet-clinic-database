@@ -35,28 +35,28 @@ INSERT INTO animals (name, date_of_birth, weight_kg, neutered, escape_attempts) 
 INSERT INTO animals (name, date_of_birth, weight_kg, neutered, escape_attempts) VALUES (
     'Charmander',
     'Feb 8, 2020',
-    11,
+    -11,
     false,
     0
 );
 INSERT INTO animals (name, date_of_birth, weight_kg, neutered, escape_attempts) VALUES (
     'Plantmon',
     'Nov 15, 2022',
-    5.7,
+    -5.7,
     true,
     2
 );
 INSERT INTO animals (name, date_of_birth, weight_kg, neutered, escape_attempts) VALUES (
     'Squirtle',
     'Apr 2, 1993',
-    12.13,
+    -12.13,
     false,
     3
 );
 INSERT INTO animals (name, date_of_birth, weight_kg, neutered, escape_attempts) VALUES (
     'Angemon',
     'Jun 12, 2005',
-    45,
+    -45,
     true,
     1
 );
