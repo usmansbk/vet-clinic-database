@@ -11,3 +11,5 @@ CREATE TABLE animals (
     weight_kg       FLOAT,
     PRIMARY KEY(id)
 );
+
+ALTER TABLE animals ADD species VARCHAR(100);
