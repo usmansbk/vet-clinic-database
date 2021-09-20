@@ -15,3 +15,13 @@ SELECT * from animals WHERE neutered IS TRUE;
 SELECT * from animals WHERE name NOT LIKE 'Gabumon';
 
 SELECT * from animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
+
+/* Query and Update animal table */
+BEGIN TRANSACTION;
+UPDATE animals SET species = 'unspecified';
+ROLLBACK TRANSACTION;
+
+BEGIN TRANSACTION;
+UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
+UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
+COMMIT TRANSACTION;
