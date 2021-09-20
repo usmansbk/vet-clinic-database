@@ -12,11 +12,11 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 ## Authors
 
-👤 **Author1**
+👤 **Usman**
 
-- GitHub: [@githubhandle](https://github.com/usmansbk)
-- Twitter: [@twitterhandle](https://twitter.com/usmansbk)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/usmansbk)
+- GitHub: [@usmansbk](https://github.com/usmansbk)
+- Twitter: [@usmansbk](https://twitter.com/usmansbk)
+- LinkedIn: [Usman Suleiman Babakolo](https://linkedin.com/in/usmansbk)
 
 ## 🤝 Contributing
 
