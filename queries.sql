@@ -2,4 +2,4 @@
 
 SELECT * from animals WHERE name LIKE '%mon';
 
-SELECT * from animals WHERE date_of_birth BETWEEN 2016 and 2019;
+SELECT * from animals WHERE EXTRACT(year FROM date_of_birth) BETWEEN 2016 and 2019;
