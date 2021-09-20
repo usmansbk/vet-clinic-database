@@ -35,4 +35,5 @@ DELETE FROM animals WHERE date_of_birth > 'Jan 1, 2022';
 SAVEPOINT DELETE_DATE; 
 UPDATE animals SET weight_kg = (weight_kg * -1);
 ROLLBACK TO DELETE_DATE;
+UPDATE animals SET weight_kg = (weight_kg * -1) WHERE weight_kg < 0;
 COMMIT TRANSACTION;
