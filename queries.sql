@@ -60,3 +60,8 @@ SELECT * FROM animals
 SELECT * FROM owners
     LEFT JOIN animals
     ON owners.id = animals.owner_id;
+
+SELECT species.name, COUNT(*) FROM animals
+    FULL OUTER JOIN species
+    ON species.id = animals.species_id
+    GROUP BY species.id;
