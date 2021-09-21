@@ -132,3 +132,12 @@ SELECT COUNT(visits.animals_id) FROM visits
     INNER JOIN animals ON animals.id = visits.animals_id
     INNER JOIN specialization ON specialization.vets_id = vets.id
     WHERE specialization.species_id <> animals.species_id;
+
+SELECT species.name, COUNT(visits.animals_id) AS species_count FROM visits
+    INNER JOIN vets ON vets.id = visits.vets_id
+    INNER JOIN animals ON animals.id = visits.animals_id
+    INNER JOIN species ON species.id = animals.species_id
+    WHERE vets.name = 'Maisy Smith'
+    GROUP BY species.name
+    ORDER BY species_count DESC
+    FETCH FIRST 1 ROWS ONLY;
