@@ -103,3 +103,19 @@ UPDATE animals SET owner_id = 3 WHERE name IN ('Devimon', 'Plantmon');
 UPDATE animals SET owner_id = 4 WHERE name IN ('Charmander', 'Squirtle', 'Blossom');
 UPDATE animals SET owner_id = 5 WHERE name IN ('Angemon', 'Boarmon');
 COMMIT TRANSACTION;
+
+/* Add "join table" for visits */
+
+BEGIN TRANSACTION;
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('William Tatcher', 45, 'Apr 23, 2000');
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('Maisy Smith', 26, 'Jan 17, 2019');
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('Stephanie Mendez', 64, 'May 4, 1981');
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('Jack Harkness', 38, 'Jun 8, 2008');
+COMMIT TRANSACTION;
+
+BEGIN TRANSACTION;
+INSERT INTO specialization (vets_id, species_id) VALUES (1, 1);
+INSERT INTO specialization (vets_id, species_id) VALUES (3, 2);
+INSERT INTO specialization (vets_id, species_id) VALUES (3, 1);
+INSERT INTO specialization (vets_id, species_id) VALUES (4, 2);
+COMMIT TRANSACTION;
