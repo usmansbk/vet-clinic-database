@@ -91,4 +91,9 @@ SELECT animals.name, MAX(visits.date_of_visit) AS last_visit FROM visits
     GROUP BY animals.name, visits.date_of_visit
     ORDER BY visits.date_of_visit DESC
     FETCH FIRST 1 ROWS ONLY
-    ;
+;
+
+
+SELECT COUNT(DISTINCT visits.animals_id) FROM visits
+    INNER JOIN vets ON vets.id = visits.vets_id
+    WHERE vets.name = 'Stephanie Mendez';
