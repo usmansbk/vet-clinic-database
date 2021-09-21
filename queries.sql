@@ -126,3 +126,9 @@ SELECT * FROM visits
     INNER JOIN animals ON animals.id = visits.animals_id
     ORDER BY visits.date_of_visit DESC
     FETCH FIRST 1 ROWS ONLY;
+
+SELECT COUNT(visits.animals_id) FROM visits
+    INNER JOIN vets ON vets.id = visits.vets_id
+    INNER JOIN animals ON animals.id = visits.animals_id
+    INNER JOIN specialization ON specialization.vets_id = vets.id
+    WHERE specialization.species_id <> animals.species_id;
