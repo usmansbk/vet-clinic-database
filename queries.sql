@@ -120,3 +120,9 @@ SELECT animals.name, MAX(visits.date_of_visit) AS first_visit FROM visits
     GROUP BY animals.name, visits.date_of_visit
     ORDER BY first_visit
     FETCH FIRST 1 ROWS ONLY;
+
+SELECT * FROM visits
+    INNER JOIN vets ON vets.id = visits.vets_id
+    INNER JOIN animals ON animals.id = visits.animals_id
+    ORDER BY visits.date_of_visit DESC
+    FETCH FIRST 1 ROWS ONLY;
