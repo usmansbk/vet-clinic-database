@@ -81,3 +81,22 @@ SELECT owners.full_name, COUNT(animals.owner_id) FROM animals
     FULL OUTER JOIN owners 
     ON animals.owner_id = owners.id
     GROUP BY owners.id;
+
+/* Add "join table" for visits */
+
+SELECT animals.name, MAX(visits.date_of_visit) FROM vets
+    INNER JOIN visits ON vets.id = visits.vets_id
+    INNER JOIN animals ON animals.id = visits.animals_id
+    WHERE vets.name = 'William Tatcher'
+    GROUP BY vets.name, animals.name
+    ORDER BY visits.date_of_visit
+;
+
+SELECT animals.name, MAX(visits.date_of_visit) AS last_visit FROM visits
+    INNER JOIN vets ON vets.id = visits.vets_id
+    INNER JOIN animals ON animals.id = visits.animals_id
+    WHERE vets.name = 'William Tatcher'
+    GROUP BY animals.name, visits.date_of_visit
+    ORDER BY visits.date_of_visit DESC
+    FETCH FIRST 1 ROWS ONLY
+    ;
