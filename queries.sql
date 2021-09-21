@@ -90,10 +90,18 @@ SELECT animals.name, MAX(visits.date_of_visit) AS last_visit FROM visits
     WHERE vets.name = 'William Tatcher'
     GROUP BY animals.name, visits.date_of_visit
     ORDER BY visits.date_of_visit DESC
-    FETCH FIRST 1 ROWS ONLY
-;
-
+    FETCH FIRST 1 ROWS ONLY;
 
 SELECT COUNT(DISTINCT visits.animals_id) FROM visits
     INNER JOIN vets ON vets.id = visits.vets_id
     WHERE vets.name = 'Stephanie Mendez';
+
+SELECT vets.name, species.name FROM vets 
+    LEFT JOIN specialization ON specialization.vets_id = vets.id
+    LEFT JOIN species ON species.id = specialization.species_id;
+
+SELECT animals.name, visits.date_of_visit FROM visits
+    INNER JOIN vets ON vets.id = visits.vets_id
+    INNER JOIN animals ON animals.id = visits.animals_id
+    WHERE vets.name = 'Stephanie Mendez'
+    AND visits.date_of_visit BETWEEN 'Apr 1, 2020' AND 'Aug 30, 2020';
