@@ -139,10 +139,6 @@ SELECT species.name, COUNT(visits.animals_id) AS species_count FROM visits
 
 /* Performace Audit */
 
--- Before
 explain analyze SELECT COUNT(*) FROM visits where animals_id = 4;
 explain analyze SELECT * FROM visits where vets_id = 2;
 explain analyze SELECT * FROM owners where email = 'owner_18327@mail.com';
-
--- After
-explain analyze SELECT COUNT(id) FROM visits where animals_id = 4;
