@@ -62,3 +62,17 @@ CREATE TABLE visits (
     FOREIGN KEY (vets_id) REFERENCES vets (id),
     PRIMARY KEY (id)
 );
+
+/* Performace Audit */
+
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- Optimize visits table by creating an Index using the animals_id column
+CREATE INDEX animals_id_asc ON visits (animals_id ASC);
+
+-- Optimize visits table by creating an Index using the vets_id column
+CREATE INDEX vets_id_asc ON visits (vets_id ASC);
+
+-- -- Optimize owners table by creating an Index using the email column
+CREATE INDEX owners_email_asc ON owners (email ASC);
