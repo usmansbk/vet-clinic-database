@@ -8,7 +8,7 @@ CREATE TABLE patients (
 CREATE TABLE medical_histories (
     id              INT GENERATED ALWAYS AS IDENTITY,
     admitted_at     TIMESTAMP,
-    status          BOOLEAN,
+    status          VARCHAR(100),
     patient_id      INT,
     FOREIGN KEY (patient_id) REFERENCES patients (id),
     PRIMARY KEY(id)
