@@ -80,5 +80,5 @@ CREATE INDEX animals_id_asc ON visits (animals_id ASC);
 -- Optimize visits table by creating an Index using the vets_id column
 CREATE INDEX vets_id_asc ON visits (vets_id ASC);
 
--- Optimize owners table by creating an Index using the email column
-CREATE INDEX owners_email_asc ON owners (email ASC);
+-- -- Optimize owners table by creating an Index using the email column
+-- CREATE INDEX owners_email_asc ON owners (email ASC);
